@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login & Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "/login/css/index.css" %} ">
+
+  </head>
+  <body>
+    {% if messages %}
+      <ul>
+          {% for message in messages %}
+            <li>{{message}}</li>
+          {% endfor %}
+      </ul>
+    {% endif %}
+
+      <div class="registration">
+        <h1>Registration</h1>
+        <form action="{% url 'register' %}" method="post">
+          {% csrf_token %}
+
+          <input type="text" name="name" placeholder="Name">
+
+          <input type="text" name="alias" placeholder="Alias">
+
+          <input type="email" name="email" placeholder="Email">
+
+          <input type="password" name="password" placeholder="Password">
+
+          <input type="password" name="confirm_PW" placeholder="Password Confirmation">
+
+          <label>DOB:</label>
+          <input class="dob" type="date" name="birthdate">
+
+
+          <input class="register_button" type="submit" value="Register">
+
+        </form>
+      </div>
+
+
+        <h1>Login</h1>
+
+        <form class="login" action="{% url 'login' %}" method="post">
+          {% csrf_token %}
+
+            <input type="email" name="email" placeholder="Email">
+
+            <input type="password" name="password" placeholder="Password">
+
+
+          <input class="login_button" type="submit" value="Login">
+        </form>
+
+
+
+  </body>
+</html>

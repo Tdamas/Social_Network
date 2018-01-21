@@ -1,0 +1,60 @@
+html {
+  background-image: url(/static/login/image/friendship.jpg);
+  background-size: cover;
+
+}
+li {
+  color: red;
+  t
+}
+h1 {
+    color: black;
+    text-align: center;
+    text-shadow: 2px 0 silver, 0 2px silver, 2px 0 silver, 0 2px silver;
+}
+
+form {
+  margin-left: 475px;
+  margin-right: 150px;
+  background-color: #efefef;
+  border-radius: 10px;
+  width: 475px;
+  height: 425px;
+  background: radial-gradient(white, #0a0909);
+}
+.login {
+  height: 225px;
+  padding-top: 30px;
+}
+input {
+  margin-top: 25px;
+  height: 25px;
+  width: 300px;
+  border-radius: 5px;
+  margin-left: 85px;
+}
+input:nth-child(7) {
+    margin: none;
+}
+.dob {
+  margin-left: 0px;
+}
+label {
+  margin-left: 45px;
+}
+.register_button {
+  height: 30px;
+  margin-left: 85px;
+  width: 300px;
+  font-weight: 500;
+  font-size: 14pt;
+  background: radial-gradient(silver, #0a0909);
+}
+.login_button {
+  height: 30px;
+  margin-left: 85px;
+  width: 300px;
+  font-weight: 500;
+  font-size: 14pt;
+  background: radial-gradient(silver, #0a0909);
+}

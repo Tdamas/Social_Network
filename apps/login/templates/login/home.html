@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "/login/css/home.css" %} ">
+  </head>
+  <body>
+
+    <div id="header">
+      <h1>Welcome, {{ current_user.alias }}!</h1>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'logout' %}">Logout</a>
+    </div>
+
+    <div class="friends">
+      <p>Here is the list of your friends:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Alias</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% if friends %}
+          {% for friend in friends %}
+            <tr>
+              <td>{{ friend.alias }}</td>
+              <td><a href="{% url 'user_profile' id=friend.id %}">View Profile</a><a href="{% url 'remove_friends' id=friend.id %}"><button>Remove as Friend</butoon></a></td>
+            </tr>
+          {% endfor %}
+
+          {% else %}
+
+        {% endif %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="not_friends">
+      <p>Other Users not on your friend's list:</p>
+      <table>
+          <thead>
+            <tr>
+              <th>Alias</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for person in persons %}
+              <tr>
+                <td><a href="{% url 'user_profile' id=person.id %}">{{ person.alias }}</a></td>
+                <td><a href="{% url 'add_friends' id=person.id %}"><button>Add as Friend</button></a></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+
+  </body>
+</html>
